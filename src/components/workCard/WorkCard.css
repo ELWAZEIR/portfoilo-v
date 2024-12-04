@@ -14,7 +14,7 @@ padding: 4rem 0 2rem 0;
     background: #1a1919;
     padding: 1.2rem 1rem;
     width: 100%;
-    height: 650px;
+    height: 550px;
 }
 .img-Container img{
     width: 100%;
@@ -26,18 +26,20 @@ padding: 4rem 0 2rem 0;
     height: 40%;
 }
 .project-title{
-    height: 12.5%;
+    height: 10%;
+    margin-top: 55px;
     color: #d4caca;
     padding: 1rem 0;
 }
 .text{
+    margin-top: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 35%;
+    /* align-items: center; */
+    height: 20%;
 }
 .project-card p{
-    margin: 0;
+    margin: 15px;
     color: #d4caca;
     font-size: 1.1rem;
 }
@@ -45,7 +47,7 @@ padding: 4rem 0 2rem 0;
     height: 12.5%;
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    padding: 3rem 0;
 }
 .pro-btns .btn{
     display: flex;
@@ -68,9 +70,11 @@ padding: 4rem 0 2rem 0;
     }
     .img-Container {
         height: 320px;
+        margin: 0px;
     }
     .project-title{
         height: 60px;
+        margin: 0px;
     }
     .text{
         height: 100px;

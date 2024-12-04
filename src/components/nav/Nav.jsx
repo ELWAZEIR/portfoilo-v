@@ -29,7 +29,6 @@ export default function Nav() {
         <li>
           <Link to='/contact'>Contact</Link>
         </li>
-       
       </ul>
       <div className="hamburger" onClick={handleClick}>
         {click ? (

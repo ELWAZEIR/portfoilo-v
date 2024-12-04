@@ -22,12 +22,12 @@ ul{
     align-items: center !important;
     padding: 1.5rem !important;
     height: 20px !important;
-    font-style: 1rem !important;
+    font-style: 1rem  !important;
     text-transform: uppercase !important;
     background:rgb(248, 217, 16)  !important;
     color: black !important;
     border: 1px solid #fff !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     cursor: pointer !important;
 }
 .btn-light{
