@@ -1,20 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./AboutContent.module.css";
-import react from "../../assets/hoss.jpg";
-import react1 from "../../assets/iti1.jpg";
+import hossam from "../../assets/hoss.webp";
+import hossam1 from "../../assets/iti1.jpg";
+
 export const AboutContent = () => {
   return (
-    <div>
     <div className={classes.about}>
-      <div className={`${classes["left"]} ${classes["center"]}`} >
-        <h1>Who AM I</h1>
+      {/* <div className={`${classes["left"]} ${classes["center"]}`}> */}
+      <div className={[classes.left, classes.center].join(' ')}>
+        <header className={classes.header}>
+          <h1>Who Am I?</h1>
+        </header>
         <p>
-          Im a react front-end Developer. I create responsive secure website for
-          my clients .<span>React.js</span>
+          I'm a React front-end Developer. I create responsive, secure websites for my clients. <span>React.js</span>
         </p>
         <Link to="/Footer">
-          <button className="btn center" style={{width:'100%'}}>
+          <button className="btn center" style={{ width: "100%" }}>
             More Info
           </button>
         </Link>
@@ -23,14 +25,25 @@ export const AboutContent = () => {
       <div className={classes.right}>
         <div className={classes["img-container"]}>
           <div className={`${classes["img-stack"]} ${classes["top"]}`}>
-            <img src={react1} className={classes.img} alt="some thing error" />
+            <img
+              src={hossam1}
+              className={classes.img}
+              alt="Profile Img"
+              loading="lazy"
+              lang="en" // تحديد لغة الصورة
+            />
           </div>
           <div className={`${classes["img-stack"]} ${classes["bottom"]}`}>
-            <img src={react} className={classes.img} alt="some thing error" />
+            <img
+              src={hossam}
+              className={classes.imgr}
+              alt="Professional Photo"
+              loading="lazy"
+              lang="en" // تحديد لغة الصورة
+            />
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
