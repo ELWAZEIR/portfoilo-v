@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const Form = () => {
   let Navigate = useNavigate();
   const form = useRef();
+
   const sendData = (e) => {
     e.preventDefault();
     emailjs
@@ -17,33 +18,67 @@ export const Form = () => {
       )
       .then(
         (result) => {
-          alert("Success Send" + result.text);
+          alert("Success! Your message has been sent.");
         },
         (error) => {
-          alert("felid send" + error.text);
+          alert("Oops! Something went wrong. Please try again.");
           Navigate("/project");
         }
       );
   };
+
   return (
     <div className="form">
-      <form ref={form} onSubmit={sendData}>
-        <h1 className="d-flex align-items-center justify-content-center m-3">
-          Lets has a chat
+      <form ref={form} onSubmit={sendData} aria-labelledby="formTitle" method="POST">
+        <h1 id="formTitle" className="d-flex align-items-center justify-content-center m-3">
+          Let's Have a Chat
         </h1>
-        <label> Your Name</label>
-        <input type="text" name="from_name" required />
-        <label>Email</label>
-        <input type="email" name="email_id" required />
-        <label>Subject</label>
-        <input type="text" name="message" required />
-        <label>Message</label>
+        
+        <label htmlFor="from_name">Your Name</label>
+        <input
+          type="text"
+          name="from_name"
+          id="from_name"
+          required
+          aria-required="true"
+          aria-label="Your full name"
+          placeholder="Enter your full name"
+        />
+
+        <label htmlFor="email_id">Email</label>
+        <input
+          type="email"
+          name="email_id"
+          id="email_id"
+          required
+          aria-required="true"
+          aria-label="Your email address"
+          placeholder="Enter your email address"
+        />
+
+        <label htmlFor="subject">Subject</label>
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          required
+          aria-required="true"
+          aria-label="Subject of your message"
+          placeholder="Enter subject"
+        />
+
+        <label htmlFor="message">Message</label>
         <textarea
           name="message"
-          rows="2"
+          id="message"
+          rows="4"
           placeholder="Type Your Message Here"
+          required
+          aria-required="true"
+          aria-label="Your message"
         ></textarea>
-        <button className="btn ptnH" type="submit" value="Send">
+
+        <button className="btn ptnH" type="submit" value="Send" aria-label="Send your message">
           Send
         </button>
       </form>

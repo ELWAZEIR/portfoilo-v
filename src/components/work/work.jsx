@@ -1,26 +1,31 @@
-import React from 'react'
-import '../workCard/WorkCard.css'
-import WorkData from '../workData/workData'
-import WorkCard from '../workCard/WorkCard'
+import React from 'react';
+import '../workCard/WorkCard.css';
+import WorkData from '../workData/workData';
+import WorkCard from '../workCard/WorkCard';
+
 const Work = () => {
   return (
     <>
-      <h1 className="project-heading" style={{margin:'1px'}}>Projects</h1>
-      <div className="projects-container">
+      <h1 className="project-heading" style={{ margin: '1px' }} aria-label="My Projects">
+        Projects
+      </h1>
+      <section className="projects-container" aria-label="List of Projects">
         {WorkData.map((val, ind) => {
           return (
-            <WorkCard 
+            <WorkCard
               key={ind}
               imgSrc={val.imgSrc}
               title={val.title}
               text={val.text}
               git={val.git}
               view={val.View}
+              aria-label={`Project: ${val.title}`}
             />
-          )
+          );
         })}
-      </div>
+      </section>
     </>
-  )
-}
-export default Work
+  );
+};
+
+export default Work;
