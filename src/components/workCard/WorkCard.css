@@ -14,15 +14,7 @@
     padding-bottom: 5rem;
   }
   
-  .project-card {
-    background: #1a1919;
-    padding: 1.2rem 1rem;
-    width: 100%;
-    height: 550px;
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  }
-  
+ 
   .img-Container {
     object-fit: cover; 
     width: 100%;
@@ -37,7 +29,7 @@
   
   .project-title {
     height: 10%;
-    margin-top: 55px;
+    margin-top: 5px;
     color: #d4caca;
     padding: 1rem 0;
     font-size: 1.5rem; 
@@ -45,7 +37,7 @@
   }
   
   .text {
-    margin-top: 10px;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     height: 20%;
@@ -76,7 +68,7 @@
   }
   
   .pro-btns .btn:hover {
-    background-color: #ff6f61; 
+    background-color: #dc2b1b; 
     transition: background-color 0.3s ease; 
   }
   
@@ -114,4 +106,44 @@
       height: 100%;
     }
   }
+  
+  .projects-container {
+    max-width: 1140px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* يجعل جميع الكروت بنفس العرض */
+    grid-gap: 40px;
+    padding-bottom: 5rem;
+  }
+  
+  .project-card {
+    background: #1a1919;
+    padding: 1.2rem 1rem;
+    width: 100%; /* تأكد من أن جميع الكروت تأخذ نفس العرض داخل الشبكة */
+    min-width: 300px; /* يمنع الكروت من أن تصبح أصغر من هذا الحجم */
+    height: 550px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-title {
+    height: auto;
+    min-height: 60px; /* يضمن تساوي ارتفاع العناوين */
+    color: #d4caca;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    text-align: center;
+    word-wrap: break-word; /* يمنع العناوين الطويلة من كسر التخطيط */
+  }
+  
+  .text {
+    flex-grow: 1; /* يوزع المساحة بشكل متساوٍ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
   

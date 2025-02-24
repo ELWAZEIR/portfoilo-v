@@ -1,14 +1,45 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import classes from "./AboutContent.module.css";
-import hossam from "../../assets/hoss.webp";
 import hossam1 from "../../assets/iti1.jpg";
 
 export const AboutContent = () => {
+  const fullText = "Front-End Developer";
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [textIndex, setTextIndex] = useState(0);
+
+  useEffect(() => {
+    const typingSpeed = 150; // سرعة الكتابة
+    const deletingSpeed = 75; // سرعة المسح
+    const timeout = isDeleting ? deletingSpeed : typingSpeed;
+
+    const handleTyping = () => {
+      if (isDeleting) {
+        if (textIndex > 0) {
+          setDisplayText((prev) => prev.substring(0, textIndex - 1));
+          setTextIndex((prev) => prev - 1);
+        } else {
+          setIsDeleting(false);
+        }
+      } else {
+        if (textIndex < fullText.length) {
+          setDisplayText((prev) => prev + fullText[textIndex]);
+          setTextIndex((prev) => prev + 1);
+        } else {
+          setIsDeleting(true);
+        }
+      }
+    };
+
+    const timer = setTimeout(handleTyping, timeout);
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, textIndex]);
+
   return (
     <div className={classes.about}>
       <header className={classes.header}>
-        <h1>Who Am I?</h1>
+      <h1 className={classes.title}>Hossam 😃 {displayText}</h1>
+      <h2 className={classes.subtitle}>Turning Ideas Into Digital Reality</h2>
         <meta 
           name="description" 
           content="Hossam Shaban is a skilled front-end React developer, specializing in creating responsive and secure websites for clients. Learn about his projects and skills." 
@@ -17,44 +48,56 @@ export const AboutContent = () => {
           name="keywords" 
           content="React Developer, Front-end Developer, Web Development, Portfolio, JavaScript, HTML, CSS, Responsive Websites, Secure Websites"
         />
-        <meta name="author" content="Hossam Shaban" />
-        <meta name="robots" content="index, follow" />
       </header>
+      <div className={classes.contentWrapper}>
+        <div className={classes.left}>
+          <p className={classes.intro}>
+            I'm a passionate React Front-End Developer specializing in crafting modern,
+            <span className={classes.highlight}> high-performance web applications</span>. 
+            With over 2 years of experience in the React ecosystem, I build responsive and scalable 
+            solutions that drive business growth.
+          </p>
 
-      <div className={[classes.left, classes.center].join(' ')}>
-        <p>
-          I'm a React front-end Developer. I create responsive, secure websites for my clients using <span>React.js</span>.
-        </p>
-        <Link to="/Footer">
-          <button 
-            className="btn center" 
-            style={{ width: "100%" }} 
-            aria-label="Learn more about Hossam Shaban"
-          >
-            More Info
-          </button>
-        </Link>
-      </div>
-
-      <div className={classes.right}>
-        <div className={classes["img-container"]}>
-          <div className={`${classes["img-stack"]} ${classes["top"]}`}>
-            <img
-              src={hossam1}
-              className={classes.img}
-              alt="Profile img of Hossam Shaban, React Developer"
-              loading="lazy"
-              lang="en"
-            />
+          <div className={classes.skillsSection}>
+            <h3 className={classes.sectionTitle}>Technical Expertise</h3>
+            <ul className={classes.skillsList}>
+              <li><span className={classes.skillBadge}>Next.js</span> - Production-grade SSR applications</li>
+              <li><span className={classes.skillBadge}>Node.js & Express</span> - Backend API development</li>
+              <li><span className={classes.skillBadge}>Angular</span> - Building dynamic web applications</li>
+              <li><span className={classes.skillBadge}>MongoDB</span> - Database design & management</li>
+              <li><span className={classes.skillBadge}>MERN Stack</span> - Certified from ITI</li>
+            </ul>
           </div>
-          <div className={`${classes["img-stack"]} ${classes["bottom"]}`}>
-            <img
-              src={hossam}
-              className={classes.imgr}
-              alt="Professional img of Hossam Shaban"
-              loading="lazy"
-              lang="en"
-            />
+
+          <p className={classes.additionalInfo}>
+            I hold certifications in <span className={classes.certHighlight}>Frontend Cross-Platform Development</span> 
+            and <span className={classes.certHighlight}>MERN Stack</span> from ITI, 
+            with hands-on experience in building hybrid and full-stack applications. My development approach 
+            emphasizes:
+            <ul className={classes.approachList}>
+              <li>Clean architecture patterns</li>
+              <li>Performance optimization</li>
+              <li>Secure coding practices</li>
+              <li>Cross-browser compatibility</li>
+            </ul>
+          </p>
+        </div>
+
+        <div className={classes.right}>
+          <div className={classes.imgContainer}>
+            <div className={classes.imgWrapper}>
+              <img
+                src={hossam1}
+                className={classes.img}
+                alt="Hossam Shaban - Professional React Developer"
+                loading="lazy"
+              />
+              <div className={classes.overlay}></div>
+            </div>
+            <div className={classes.certificationBadge}>
+              <span>ITI Certified</span>
+              <small>Frontend Cross-Platform & MERN Stack</small>
+            </div>
           </div>
         </div>
       </div>

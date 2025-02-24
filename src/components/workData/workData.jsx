@@ -1,5 +1,29 @@
 const projectCardData = [
   {
+    imgSrc: 'https://images.pexels.com/photos/2675061/pexels-photo-2675061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imgAlt: 'school_management_system',
+    title: 'school-management-system',
+    text: 'School Management System that streamlines administrative tasks, student records, attendance, and communication between students, teachers, and parents.',
+    View: 'https://school-mangment-livid.vercel.app/',
+    git: 'https://github.com/ELWAZEIR/FrontEndSchool.git',
+  },
+  {
+    imgSrc: 'https://images.pexels.com/photos/6214476/pexels-photo-6214476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imgAlt: 'ecommerce website ',
+    title: ' ecommerce website ',
+    text: 'for testing user:"hossamnada@gmail.com" password:" h123456" allows businesses to sell products or services, manage inventory, process payments, and handle customer interactions.',
+    View: 'https://project-react-iti-bns.vercel.app/home',
+    git: 'https://github.com/ELWAZEIR/Project-React.iti.H-N.git',
+  },
+  {
+    imgSrc: 'https://media.istockphoto.com/id/482858629/photo/doctors-hospital-corridor-nurse-pushing-gurney-stretcher-bed.jpg?s=2048x2048&w=is&k=20&c=aKSK30aJRQw9hYuKyXTd1oXlAkRz0PHDQjJeGiq8DeQ=',
+    imgAlt: 'hospital management system ',
+    title: 'Hospital-Management-System ',
+    text: 'A hospital management system is a software solution designed to streamline hospital operations, including patient records, appointments, billing, and staff management.',
+    View: 'https://hospital-system-beige.vercel.app/',
+    git: 'https://github.com/ahmedketaa/Hospital-system',
+  },
+  {
     imgSrc: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60',
     imgAlt: 'Ecommerce platform showcasing online shopping',
     title: 'Ecommerce',
@@ -46,7 +70,7 @@ const projectCardData = [
     text: 'A simple task management app to keep track of daily tasks. Set reminders, add new tasks, and stay organized easily.',
     View: 'https://elwazeir.github.io/to-do-list/',
     git: 'https://github.com/ELWAZEIR/to-do-list.git',
-  },
+  },  
 ]
 
 export default projectCardData
