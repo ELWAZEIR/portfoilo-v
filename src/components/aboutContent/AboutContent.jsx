@@ -39,7 +39,7 @@ export const AboutContent = () => {
     <div className={classes.about}>
       <header className={classes.header}>
       <h1 className={classes.title}>Hossam 😃 {displayText}</h1>
-      <h2 className={classes.subtitle}>Turning Ideas Into Digital Reality</h2>
+      <h2 className={classes.subtitle}>Turning Ideas In <span style={{color:"white"}}>to Digital Reality</span></h2>
         <meta 
           name="description" 
           content="Hossam Shaban is a skilled front-end React developer, specializing in creating responsive and secure websites for clients. Learn about his projects and skills." 
@@ -69,18 +69,7 @@ export const AboutContent = () => {
             </ul>
           </div>
 
-          <p className={classes.additionalInfo}>
-            I hold certifications in <span className={classes.certHighlight}>Frontend Cross-Platform Development</span> 
-            and <span className={classes.certHighlight}>MERN Stack</span> from ITI, 
-            with hands-on experience in building hybrid and full-stack applications. My development approach 
-            emphasizes:
-            <ul className={classes.approachList}>
-              <li>Clean architecture patterns</li>
-              <li>Performance optimization</li>
-              <li>Secure coding practices</li>
-              <li>Cross-browser compatibility</li>
-            </ul>
-          </p>
+         
         </div>
 
         <div className={classes.right}>
@@ -101,6 +90,18 @@ export const AboutContent = () => {
           </div>
         </div>
       </div>
+      <p className={classes.additionalInfo}>
+            I hold certifications in <span className={classes.certHighlight}>Frontend Cross-Platform Development</span> 
+            a <span style={{color:"white"}}>nd MERN Stack from ITI, 
+            with hands-on experience in building</span> hybrid and full-stack applications. My development approach 
+            e<span style={{color:"white"}}>mphasizes:</span>
+            <ul className={classes.approachList}>
+              <li>Clean architecture patterns</li>
+              <li>Performance optimization</li>
+              <li style={{color:"white"}}>Secure coding practices</li>
+              <li style={{color:"white"}}>Cross-browser compatibility</li>
+            </ul>
+          </p>
     </div>
   );
 };
